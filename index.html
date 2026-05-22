@@ -27,6 +27,9 @@
         <li><a href="#assistant">AI Assistant</a></li>
         <li><a href="#features">Safety Features</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><button class="nav-button" type="button" id="profileNav">Profile</button></li>
+        <li><a class="nav-auth-link" href="login.html" id="authLink">Login</a></li>
+        <li><button class="nav-button" type="button" id="logoutButton" hidden>Logout</button></li>
       </ul>
     </nav>
   </header>
@@ -210,9 +213,11 @@
         <p class="offline-note">Available even without internet</p>
         <!-- localStorage Emergency Vault Integration Here -->
         <div class="vault-list">
-          <div><span>Blood Group</span><strong>O+</strong></div>
-          <div><span>Emergency Contacts</span><strong>3 saved</strong></div>
-          <div><span>Medical Notes</span><strong>Allergy ready</strong></div>
+          <div><span>Name</span><strong id="vaultName">Add profile</strong></div>
+          <div><span>Blood Group</span><strong id="vaultBlood">Not saved</strong></div>
+          <div><span>Phone Number</span><strong id="vaultPhone">Not saved</strong></div>
+          <div><span>Emergency Contact</span><strong id="vaultEmergency">Not saved</strong></div>
+          <div><span>Medical Notes</span><strong id="vaultMedical">Not saved</strong></div>
         </div>
       </article>
 
@@ -267,6 +272,65 @@
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="modal-backdrop" id="profileModal" hidden>
+    <section class="profile-modal glass-card" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Emergency Profile</p>
+          <h2 id="profileTitle">User Details</h2>
+        </div>
+        <button class="icon-button" type="button" id="closeProfile" aria-label="Close profile form">X</button>
+      </div>
+      <p class="security-note">Frontend-only hackathon demo: profile and session data are stored in localStorage.</p>
+      <form class="profile-form" id="profileForm" novalidate>
+        <label>
+          Name <span>*</span>
+          <input type="text" id="profileName" name="name" required autocomplete="name">
+        </label>
+        <label>
+          Date of Birth <span>*</span>
+          <input type="date" id="profileDob" name="dob" required>
+        </label>
+        <label>
+          Blood Group <span>*</span>
+          <select id="profileBlood" name="bloodGroup" required>
+            <option value="">Select blood group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+          </select>
+        </label>
+        <label>
+          Phone Number <span>*</span>
+          <input type="tel" id="profilePhone" name="phone" required autocomplete="tel" inputmode="tel">
+        </label>
+        <label>
+          Emergency Contact Number <span>*</span>
+          <input type="tel" id="profileEmergency" name="emergencyContact" required autocomplete="tel" inputmode="tel">
+        </label>
+        <label>
+          Address
+          <textarea id="profileAddress" name="address" rows="3"></textarea>
+        </label>
+        <label class="full-field">
+          Medical Conditions
+          <textarea id="profileMedical" name="medicalConditions" rows="3" placeholder="Allergies, medication, conditions, or notes"></textarea>
+        </label>
+        <p class="form-error" id="profileError" role="alert"></p>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Save Emergency Profile</button>
+          <a class="btn btn-soft" href="login.html">Switch Account</a>
+        </div>
+      </form>
+    </section>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

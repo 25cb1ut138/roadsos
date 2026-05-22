@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to SafeRoute AI emergency dashboard.">
+  <title>Login | SafeRoute AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+  <main class="auth-shell">
+    <section class="auth-panel glass-card">
+      <a class="logo auth-logo" href="index.html" aria-label="SafeRoute AI home">
+        <span class="logo-mark">SR</span>
+        <span>SafeRoute AI</span>
+      </a>
+      <p class="eyebrow">Secure Demo Access</p>
+      <h1>Login to Emergency Dashboard</h1>
+      <p class="auth-copy">Use your saved demo account to access SOS tools, emergency vault, and personalized sharing.</p>
+
+      <form class="auth-form" id="loginForm" novalidate>
+        <label>
+          Email / Username
+          <input type="text" id="loginIdentifier" required autocomplete="username" placeholder="you@example.com">
+        </label>
+        <label>
+          Password
+          <input type="password" id="loginPassword" required autocomplete="current-password" placeholder="Enter password">
+        </label>
+        <p class="form-error" id="loginError" role="alert"></p>
+        <button class="btn btn-primary" type="submit">Login</button>
+      </form>
+
+      <p class="auth-switch">New to SafeRoute AI? <a href="register.html">Create a demo account</a></p>
+      <p class="security-note">Frontend-only demo: credentials and session are stored in localStorage.</p>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

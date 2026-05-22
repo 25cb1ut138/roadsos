@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register a SafeRoute AI demo account.">
+  <title>Register | SafeRoute AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+  <main class="auth-shell">
+    <section class="auth-panel glass-card">
+      <a class="logo auth-logo" href="index.html" aria-label="SafeRoute AI home">
+        <span class="logo-mark">SR</span>
+        <span>SafeRoute AI</span>
+      </a>
+      <p class="eyebrow">Create Demo Account</p>
+      <h1>Register for SafeRoute AI</h1>
+      <p class="auth-copy">Create a local demo account, then complete your emergency profile on the dashboard.</p>
+
+      <form class="auth-form" id="registerForm" novalidate>
+        <label>
+          Email / Username
+          <input type="text" id="registerIdentifier" required autocomplete="username" placeholder="you@example.com">
+        </label>
+        <label>
+          Password
+          <input type="password" id="registerPassword" required autocomplete="new-password" placeholder="Minimum 6 characters">
+        </label>
+        <label>
+          Confirm Password
+          <input type="password" id="registerConfirm" required autocomplete="new-password" placeholder="Repeat password">
+        </label>
+        <p class="form-error" id="registerError" role="alert"></p>
+        <button class="btn btn-primary" type="submit">Create Account</button>
+      </form>
+
+      <p class="auth-switch">Already registered? <a href="login.html">Login instead</a></p>
+      <p class="security-note">Frontend-only demo: no real backend or password encryption is used.</p>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
